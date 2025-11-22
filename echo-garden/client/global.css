@@ -1,0 +1,143 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme with Catan-inspired colors
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   */
+  :root {
+    --background: 40 13% 96%;
+    --foreground: 20 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 30% 15%;
+
+    --primary: 24 100% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 60% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 10% 85%;
+    --muted-foreground: 20 10% 40%;
+
+    --accent: 40 100% 50%;
+    --accent-foreground: 20 30% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 15% 88%;
+    --input: 40 15% 92%;
+    --ring: 24 100% 48%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Catan resource colors */
+    --catan-wood: 25 70% 50%;
+    --catan-brick: 8 85% 50%;
+    --catan-wheat: 43 100% 55%;
+    --catan-sheep: 120 40% 60%;
+    --catan-ore: 210 25% 35%;
+    --catan-sea: 200 70% 50%;
+    --catan-desert: 40 35% 60%;
+  }
+
+  .dark {
+    --background: 20 20% 12%;
+    --foreground: 40 13% 96%;
+
+    --card: 20 25% 18%;
+    --card-foreground: 40 13% 96%;
+
+    --popover: 20 25% 18%;
+    --popover-foreground: 40 13% 96%;
+
+    --primary: 24 100% 55%;
+    --primary-foreground: 20 30% 15%;
+
+    --secondary: 200 70% 50%;
+    --secondary-foreground: 20 30% 15%;
+
+    --muted: 20 15% 35%;
+    --muted-foreground: 40 10% 70%;
+
+    --accent: 40 100% 55%;
+    --accent-foreground: 20 30% 15%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 20 20% 25%;
+    --input: 20 20% 22%;
+    --ring: 24 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  h1 {
+    @apply font-display text-4xl font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply font-display text-3xl font-bold;
+  }
+
+  h3 {
+    @apply font-display text-xl font-semibold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity;
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+
+  .gradient-hero {
+    @apply bg-gradient-to-br from-primary via-accent to-secondary;
+  }
+}
